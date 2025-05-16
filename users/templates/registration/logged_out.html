@@ -1,0 +1,9 @@
+{% extends 'parent/base.html' %}
+{% block title %}logout{% endblock %}
+
+{% block content %}
+<div class="logout-message">
+    <h2>شما با موفقیت خارج شدید</h2>
+    <a href="{% url 'users:login' %}" class="btn-primary">ورود مجدد</a>
+</div>
+{% endblock %}

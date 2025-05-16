@@ -1,0 +1,678 @@
+/* Global Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/vazir/Vazir.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Vazir', sans-serif;
+    background: #f4f9fb;
+    color: #333;
+    direction: rtl;
+}
+
+/* ثبت نام - Container */
+.container {
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 30px 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    direction: rtl;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form p {
+    margin: 0;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #00a6bc;
+    box-shadow: 0 0 0 2px rgba(0, 166, 188, 0.2);
+    outline: none;
+}
+
+/* Submit Button */
+button {
+    background: #00a6bc;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #008b9f;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        margin: 40px 15px;
+        padding: 20px;
+    }
+}
+
+/* پیام ثبت نام با موفقیت */
+.success-message .container {
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 30px 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    direction: rtl;
+    font-family: 'Vazir', sans-serif;
+}
+
+.success-message h1 {
+    font-size: 1.6rem;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* دکمه ورود */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #00a6bc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #008b9f;
+}
+
+/* Header */
+.main-header {
+    width: 100%;
+    background-color: #00a6bc;
+    padding: 16px 0;
+    color: white;
+    text-align: center;
+    border-bottom: 3px solid #008b9f;
+    direction: rtl;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Vazir', sans-serif;
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Vazir', sans-serif;
+}
+
+.main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #e4f2f5;
+    padding: 14px 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #444;
+    border-top: 1px solid #d0e7eb;
+    direction: rtl;
+}
+
+.main-footer p {
+    margin: 2px 0;
+    line-height: 1;
+    font-family: 'Vazir', sans-serif;
+}
+
+/* صفحه خروج */
+.logout-message {
+    max-width: 420px;
+    margin: 100px auto;
+    padding: 30px 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    direction: rtl;
+    font-family: 'Vazir', sans-serif;
+}
+
+.logout-message h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.logout-message .btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #00a6bc;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.logout-message .btn-primary:hover {
+    background-color: #008b9f;
+}
+
+/* ticket */
+
+/* پیام‌های سیستمی (Django messages)  ------------------------------*/
+ul.messages {
+    list-style: none;
+    margin: 0 auto 24px;
+    padding: 0;
+    max-width: 480px;
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+}
+
+ul.messages li {
+    padding: 14px 20px 14px 60px;          /* فضا برای آیکون سمت راست */
+    border-radius: 10px;
+    margin-bottom: 14px;
+    color: #ffffff;
+    font-weight: 500;
+    position: relative;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+/* آیکون کوچک در سمت راست هر پیام */
+ul.messages li::before{
+    content: '⚑';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+/* رنگ‌بندی انواع پیام‌ها */
+ul.messages li.success  {background: #16a085;}  /* موفقیت */
+ul.messages li.error    {background: #e74c3c;}  /* خطا */
+ul.messages li.info     {background: #3498db;}  /* اطلاع‌رسانی */
+ul.messages li.warning  {background: #f39c12;}  /* هشدار */
+
+/* فرم پشتیبانی (login > banner-content)  -------------------------*/
+.login .container{
+    max-width: 520px;
+    margin: 60px auto;
+    padding: 40px 32px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.05);
+    direction: rtl;
+}
+
+.login form p{
+    margin-bottom: 1rem;
+}
+
+.login form label{
+    display:block;
+    margin-bottom:.4rem;
+    font-weight:500;
+    color:#333;
+    font-size:1rem;
+}
+
+.login form input,
+.login form textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:1rem;
+    background:#fafafa;
+    transition:border .3s, box-shadow .3s;
+}
+
+.login form input:focus,
+.login form textarea:focus{
+    border-color:#00a6bc;
+    box-shadow:0 0 0 3px rgba(0,166,188,.2);
+    outline:none;
+}
+
+.kafe-btn{
+    background:#00a6bc;
+    color:#fff!important;
+    border:none;
+    padding:14px 28px;
+    border-radius:10px;
+    font-size:1rem;
+    font-weight:600;
+    display:inline-block;
+    width:100%;
+    cursor:pointer;
+    transition:background .3s ease;
+}
+
+.kafe-btn:hover{
+    background:#008fa2;
+}
+
+/* password reset */
+
+.change-password-section {
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+    margin-top: 40px;
+}
+
+.change-password-section .card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.change-password-section .card-body {
+    padding: 32px;
+    background-color: #ffffff;
+}
+
+.change-password-section h1 {
+    color: #00a6bc;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.change-password-section form p {
+    margin-bottom: 1.5rem;
+}
+
+.change-password-section form label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: #444;
+}
+
+.change-password-section form input[type="password"],
+.change-password-section form input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.change-password-section form input:focus {
+    border-color: #00a6bc;
+    box-shadow: 0 0 0 3px rgba(0, 166, 188, 0.2);
+    outline: none;
+}
+
+.change-password-section form input[type="submit"] {
+    background-color: #00a6bc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.change-password-section form input[type="submit"]:hover {
+    background-color: #008fa2;
+}
+
+/* password success message */
+
+.password-success-message {
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+    color: #00a6bc;
+    font-size: 1.4rem;
+    padding: 20px;
+}
+
+.password-success-message a.btn {
+    background-color: #00a6bc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.password-success-message a.btn:hover {
+    background-color: #008fa2;
+}
+
+/* change password */
+
+.password-change-section {
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+    margin-top: 40px;
+}
+
+.password-change-section .card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.password-change-section .card-body {
+    padding: 32px;
+    background-color: #ffffff;
+}
+
+.password-change-section h1 {
+    color: #00a6bc;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.password-change-section form p {
+    margin-bottom: 1.5rem;
+}
+
+.password-change-section form label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: #444;
+}
+
+.password-change-section form input[type="email"] {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.password-change-section form input:focus {
+    border-color: #00a6bc;
+    box-shadow: 0 0 0 3px rgba(0, 166, 188, 0.2);
+    outline: none;
+}
+
+.password-change-section form button[type="submit"] {
+    background-color: #00a6bc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.password-change-section form button[type="submit"]:hover {
+    background-color: #008fa2;
+}
+
+/* password reset sent */
+
+.password-reset-sent {
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+    margin: 60px auto;
+    padding: 40px;
+    max-width: 600px;
+    text-align: center;
+    background-color: #f0faff;
+    border: 1px solid #d3f1f6;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 166, 188, 0.05);
+}
+
+.password-reset-sent h2 {
+    color: #00a6bc;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+
+/* password reset complete*/
+
+.password-changed-message {
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 60px auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.password-changed-message h2 {
+    color: #00a6bc;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.password-changed-message a.btn {
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.password-reset-sent {
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+    background-color: #f4fdfd;
+    border: 1px solid #cceff1;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 60px auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.password-reset-sent h2 {
+    color: #00a6bc;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+.reset-password-section {
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+    margin-top: 40px;
+}
+
+.reset-password-section h1 {
+    color: #00a6bc;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.reset-password-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    padding: 32px;
+}
+
+.reset-password-card form p {
+    margin-bottom: 1.5rem;
+}
+
+.reset-password-card label {
+    font-weight: 500;
+    color: #444;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.reset-password-card input[type="password"] {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.reset-password-card input:focus {
+    border-color: #00a6bc;
+    box-shadow: 0 0 0 3px rgba(0, 166, 188, 0.2);
+    outline: none;
+}
+
+.btn-reset-password {
+    background-color: #00a6bc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reset-password:hover {
+    background-color: #008fa2;
+}
+
+.invalid-link-message {
+    font-family: 'Vazir', sans-serif;
+    color: #dc3545;
+}
+
+.password-reset-sent-section {
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+}
+
+.password-reset-sent-card {
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.password-reset-sent h2 {
+    color: #00a6bc;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.password-reset-sent p {
+    color: #444;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.password-reset-sent .btn {
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.password-reset-sent .btn:hover {
+    background-color: #008fa2;
+    color: #fff;
+}
