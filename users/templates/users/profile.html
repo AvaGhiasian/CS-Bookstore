@@ -1,0 +1,61 @@
+{% extends 'parent/base.html' %}
+{% load static %}
+
+{% block title %}پروفایل{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/css/users/profile.css' %}">
+
+<section class="profile-container">
+    <div class="profile-header">
+        <div class="user-info">
+            <div class="avatar-placeholder"></div>
+            <div class="user-dropdown">
+                <button class="dropdown-toggle">{{ user.username }} <span>▼</span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'users:profile' %}">پنل کاربری</a></li>
+                    <li><a href="#">کتاب های من</a></li>
+                    <li><a href="{% url 'users:ticket' %}">تیکت ها</a></li>
+                    <li><a href="#">پرسش های من</a></li>
+                    <li><a href="{% url 'users:user_edit' %}">ویرایش پروفایل</a></li>
+                    <li><a href="{% url 'users:password_reset' %}">بازنشانی رمز ورود</a></li>
+                    <li><a href="{% url 'users:logout' %}">خروج از حساب</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-stats">
+        <div class="stat-box">
+            <p>تیکت‌های من</p>
+            <strong>۰ پرسش</strong>
+        </div>
+        <div class="stat-box">
+            <p>کتاب‌های خریداری‌شده</p>
+            <strong>۰ مورد</strong>
+        </div>
+        <div class="stat-box">
+            <p>کتاب‌های مورد علاقه</p>
+            <strong>۰ مورد</strong>
+        </div>
+        <div class="stat-box">
+            <p>موجودی کیف پول</p>
+            <strong>۰ تومان</strong>
+        </div>
+    </div>
+
+    <div class="recently-watched">
+        <h3>اخیراً مشاهده شده</h3>
+        <div class="course-card">
+            <img src="#" alt="book">
+            <div>
+                <a href="#">
+                    <h4>CLRS</h4>
+                <p>chapter 3</p>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

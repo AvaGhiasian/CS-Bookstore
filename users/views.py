@@ -7,6 +7,8 @@ from django.core.mail import send_mail
 from django.contrib.auth.views import PasswordChangeView, PasswordResetView, PasswordChangeDoneView, \
     PasswordResetDoneView, PasswordResetCompleteView, PasswordResetConfirmView
 from django.urls import reverse_lazy
+import jdatetime
+from datetime import datetime
 
 from .forms import *
 
@@ -15,7 +17,13 @@ from .forms import *
 
 
 def profile(request):
-    return HttpResponse("شما در صفحه شخصی خودتان هستید.")
+    now = datetime.now()
+    persian_date = jdatetime.datetime.fromgregorian(datetime=now)
+    context = {
+        'user': request.user,
+        'persian_date': persian_date.strftime('%A %d %B %Y - %H:%M'),
+    }
+    return render(request, 'users/profile.html', context)
 
 
 def log_out(request):
@@ -61,34 +69,34 @@ def ticket(request):
             messages.success(request, 'پیام شما با موفقیت ارسال شد.')
     else:
         form = TicketForm()
-    return render(request, "forms/ticket.html", {'form': form})
+    return render(request, "users/forms/ticket.html", {'form': form})
 
 
 class CustomPasswordChangeView(PasswordChangeView):
     form_class = CustomPasswordChangeForm
-    template_name = 'forms/password_change.html'
+    template_name = 'users/forms/password_change.html'
     success_url = reverse_lazy('users:password_change_done')
 
 
 class CustomPasswordChangeDoneView(PasswordChangeDoneView):
-    template_name = 'forms/password_change_done.html'
+    template_name = 'users/forms/password_change_done.html'
 
 
 class CustomPasswordResetView(PasswordResetView):
     form_class = CustomPasswordResetForm
-    template_name = 'forms/password_reset.html'
+    template_name = 'users/forms/password_reset.html'
     email_template_name = 'forms/password_reset_email.html'
     success_url = reverse_lazy('users:password_reset_done')
 
 
 class CustomPasswordResetDoneView(PasswordResetDoneView):
-    template_name = 'forms/password_reset_done.html'
+    template_name = 'users/forms/password_reset_done.html'
 
 
 class CustomPasswordResetConfirmView(PasswordResetConfirmView):
-    template_name = 'forms/password_reset_confirm.html'
+    template_name = 'users/forms/password_reset_confirm.html'
     success_url = reverse_lazy('users:password_reset_complete')
 
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
-    template_name = 'forms/password_reset_complete.html'
+    template_name = 'users/forms/password_reset_complete.html'

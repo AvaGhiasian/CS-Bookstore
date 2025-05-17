@@ -1,0 +1,78 @@
+/* footer.css */
+
+.main-footer {
+    background-color: #3E3F5B;
+    color: #F6F1DE;
+    padding: 15px 5px 5px;
+    font-family: "Vazir", sans-serif;
+    border-top: 4px solid #ACD3A8;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto 40px auto;
+}
+
+.footer-section {
+    flex: 1 1 225px;
+    margin: 11px;
+}
+
+.footer-section h4 {
+    color: #ACD3A8;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #F6F1DE;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ACD3A8;
+}
+
+.footer-section.contact p {
+    margin-bottom: 10px;
+}
+
+.footer-section.social a.social-icon {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.6rem;
+    color: #F6F1DE;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section.social a.social-icon:hover {
+    color: #ACD3A8;
+}
+
+.footer-bottom {
+    border-top: 1px solid #8AB2A6;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #8AB2A6;
+}

@@ -1,0 +1,59 @@
+/* register.css */
+
+.login {
+    background-color: #F6F1DE;
+    padding: 60px 0;
+    font-family: 'Vazir', sans-serif;
+}
+
+.banner-content {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: #8AB2A6;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(62, 63, 91, 0.15);
+}
+
+.form-signin {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-signin .form-group {
+    margin-bottom: 20px;
+}
+
+.form-signin input[type="text"],
+.form-signin input[type="email"],
+.form-signin input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 8px;
+    font-size: 1rem;
+}
+
+.form-signin label {
+    color: #3E3F5B;
+    font-weight: bold;
+}
+
+.kafe-btn {
+    padding: 12px;
+    background-color: #ACD3A8;
+    border: none;
+    border-radius: 10px;
+    color: #3E3F5B;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.kafe-btn:hover {
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+    border: 2px solid #3E3F5B;
+}

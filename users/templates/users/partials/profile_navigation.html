@@ -1,0 +1,41 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'users/css/partials/profile_navigation.css' %}">
+
+<script src="{% static 'js/profile_navigation.js' %}"></script>#}
+
+
+<div class="user-panel">
+    <div class="profile-pic">
+        <img src="#" alt="آواتار کاربر" class="profile-avatar">
+    </div>
+    <p class="date-text">{{ persian_date }}</p>
+
+    <ul class="sidebar-menu">
+        <li class="menu-item">
+            <a href="{% url 'users:profile' %}">📋 پنل کاربری</a>
+        </li>
+        <li class="menu-item has-dropdown">
+            <a href="#">📚 کتاب‌ها</a>
+            <ul class="dropdown">
+                <li><a href="#">📖 کتاب‌های من</a></li>
+                <li><a href="#">❤️ علاقه‌مندی‌ها</a></li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#">💼 کیف پول و تراکنش‌ها</a>
+        </li>
+        <li class="menu-item">
+            <a href="{% url 'users:ticket' %}">💬 تیکت‌ها</a>
+        </li>
+        <li class="menu-item">
+            <a href="#">❓ پرسش‌های من</a>
+        </li>
+        <li class="menu-item">
+            <a href="{% url 'users:user_edit' %}">✏️ ویرایش حساب</a>
+        </li>
+        <li class="menu-item">
+            <a href="{% url 'users:logout' %}">🚪 خروج از حساب</a>
+        </li>
+    </ul>
+</div>

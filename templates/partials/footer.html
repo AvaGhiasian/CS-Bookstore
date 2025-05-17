@@ -1,0 +1,38 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/partials/footer.css' %}">
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="footer-section about">
+            <h4>درباره ما</h4>
+            <p>فروشگاه کتاب آنلاین با ارائه بهترین عناوین در حوزه‌های مختلف علمی و ادبی.</p>
+        </div>
+        <div class="footer-section links">
+            <h4>لینک‌های مفید</h4>
+            <ul>
+                <li><a href="#">خانه</a></li>
+                <li><a href="#">کتاب‌ها</a></li>
+                <li><a href="{% url 'users:register' %}">ثبت‌نام</a></li>
+                <li><a href="{% url 'users:login' %}">ورود</a></li>
+                <li><a href="#">وبلاگ</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h4>تماس با ما</h4>
+            <p><a href="mailto:avaghiasian03@gmail.com"></a>ایمیل: avaghiasian03@gmail.com</p>
+            <p><a href="tel:09912975826"></a>شماره تماس: 09912975826</p>
+            <p>آدرس: اصفهان، اصفهان</p>
+        </div>
+        <div class="footer-section social">
+            <h4>ما را دنبال کنید</h4>
+            <a href="#" aria-label="Instagram" class="social-icon">📸</a>
+            <a href="#" aria-label="Twitter" class="social-icon">🐦</a>
+            <a href="#" aria-label="LinkedIn" class="social-icon">🔗</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>تمامی حقوق محفوظ است &copy; {% now "Y" %}</p>
+        <p>طراحی شده با ❤️</p>
+    </div>
+</footer>

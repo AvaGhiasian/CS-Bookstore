@@ -1,0 +1,18 @@
+{% extends 'parent/base.html' %}
+{% block title %} ویرایش پروفایل {% endblock %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/registration/edit_user.css' %}">
+<section class="edit-profile-section">
+    <div class="edit-profile-card">
+        <h2>ویرایش پروفایل</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit">ذخیره تغییرات</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

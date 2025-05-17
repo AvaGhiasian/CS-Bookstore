@@ -1,0 +1,12 @@
+{% extends 'parent/base.html' %}
+{% load static %}
+
+{% block title %}logout{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'users/css/registration/logout.css' %}">
+<div class="logout-message">
+    <h2>شما با موفقیت خارج شدید</h2>
+    <a href="{% url 'users:login' %}" class="btn-primary">ورود مجدد</a>
+</div>
+{% endblock %}
