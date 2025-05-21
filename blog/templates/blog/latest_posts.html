@@ -1,0 +1,10 @@
+<div class="latest-posts">
+    <h2>آخرین پست ها</h2>
+    <ul class="latest-posts-list">
+        {% for post in latest_posts %}
+            <li class="latest-post-item">
+                <a href="{{ post.get_absolute_url }}" class="latest-post-link">{{ post.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

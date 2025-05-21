@@ -28,7 +28,7 @@ def profile(request):
 
 def log_out(request):
     logout(request)
-    return render(request, "registration/logged_out.html")
+    return render(request, "users/registration/logged_out.html")
 
 
 def register(request):
@@ -38,10 +38,10 @@ def register(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
-            return render(request, 'registration/register_done.html', {'user': user})
+            return render(request, 'users/registration/register_done.html', {'user': user})
     else:
         form = UserRegisterForm()
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, 'users/registration/register.html', {'form': form})
 
 
 @login_required
@@ -53,7 +53,7 @@ def edit_user(request):
     else:
         form = UserEditForm(instance=request.user)
 
-    return render(request, 'registration/edit_user.html', {'form': form})
+    return render(request, 'users/registration/edit_user.html', {'form': form})
 
 
 def ticket(request):
@@ -74,29 +74,29 @@ def ticket(request):
 
 class CustomPasswordChangeView(PasswordChangeView):
     form_class = CustomPasswordChangeForm
-    template_name = 'users/forms/password_change.html'
+    template_name = 'registration/password_change.html'
     success_url = reverse_lazy('users:password_change_done')
 
 
 class CustomPasswordChangeDoneView(PasswordChangeDoneView):
-    template_name = 'users/forms/password_change_done.html'
+    template_name = 'registration/password_change_done.html'
 
 
 class CustomPasswordResetView(PasswordResetView):
     form_class = CustomPasswordResetForm
-    template_name = 'users/forms/password_reset.html'
-    email_template_name = 'forms/password_reset_email.html'
+    template_name = 'registration/password_reset.html'
+    email_template_name = 'registration/password_reset_email.html'
     success_url = reverse_lazy('users:password_reset_done')
 
 
 class CustomPasswordResetDoneView(PasswordResetDoneView):
-    template_name = 'users/forms/password_reset_done.html'
+    template_name = 'registration/password_reset_done.html'
 
 
 class CustomPasswordResetConfirmView(PasswordResetConfirmView):
-    template_name = 'users/forms/password_reset_confirm.html'
+    template_name = 'registration/password_reset_confirm.html'
     success_url = reverse_lazy('users:password_reset_complete')
 
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
-    template_name = 'users/forms/password_reset_complete.html'
+    template_name = 'registration/password_reset_complete.html'

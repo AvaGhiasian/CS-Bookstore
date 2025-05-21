@@ -1,0 +1,161 @@
+.blog-container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #F6F1DE;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.blog-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ccc;
+}
+
+.blog-menu a {
+    background-color: #8AB2A6;
+    color: #3E3F5B;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.blog-menu a:hover {
+    background-color: #ACD3A8;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    width: 220px;
+}
+
+.search-form button {
+    background-color: #ACD3A8;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    color: #3E3F5B;
+    font-weight: bold;
+}
+
+.search-form button:hover {
+    background-color: #F6F1DE;
+}
+
+.blog-stats,
+.popular-posts {
+    padding: 20px;
+}
+
+.blog-stats h2,
+.popular-posts h2 {
+    color: #3E3F5B;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.popular-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.popular-posts li {
+    margin-bottom: 10px;
+}
+
+.popular-posts a {
+    color: #3E3F5B;
+    text-decoration: none;
+    background-color: #8AB2A6;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.popular-posts a:hover {
+    background-color: #ACD3A8;
+}
+
+/* بخش عنوان */
+.section-title {
+    font-size: 1.8rem;
+    color: #3E3F5B;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.section-description {
+    color: #3E3F5B;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 0 1rem;
+}
+
+.post-card {
+    background-color: #ACD3A8;
+    border-radius: 16px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.post-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.post-content h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #3E3F5B;
+}
+
+.post-content h3 a {
+    text-decoration: none;
+    color: #3E3F5B;
+}
+
+.post-content p {
+    color: #555;
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.post-date {
+    color: #ACD3A8;
+    font-size: 0.85rem;
+}
+

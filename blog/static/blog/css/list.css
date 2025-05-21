@@ -1,0 +1,110 @@
+body {
+    font-family: 'Vazir', sans-serif;
+    direction: rtl;
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+    line-height: 1.7;
+}
+
+h1, h2, h4, .h5 {
+    color: #3E3F5B;
+}
+
+.bg-dark-overlay-4 {
+    background-color: #8AB2A6;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.bg-dark-overlay-4:hover {
+    background-color: #ACD3A8;
+}
+
+.stretched-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.stretched-link.btn-link.text-white {
+    color: white !important;
+    font-weight: bold;
+}
+
+.card {
+    background-color: #ededed;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.card .row {
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.card h4 {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card p {
+    color: #555;
+}
+
+.nav.nav-divider {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.nav-link .avatar-img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar {
+    margin-left: 6px;
+}
+
+a.btn-link {
+    color: #3E3F5B;
+    font-weight: bold;
+}
+
+a.btn-link:hover {
+    color: #ACD3A8;
+}
+
+.text-primary-hover:hover {
+    color: #ACD3A8 !important;
+}
+
+.badge.text-bg-danger {
+    background-color: #ACD3A8;
+    color: #3E3F5B;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}

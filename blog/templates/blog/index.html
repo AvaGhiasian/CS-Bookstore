@@ -1,0 +1,65 @@
+{% extends 'parent/base.html' %}
+{% load static %}
+{% load blog_tags %}
+
+{% block title %}لیست پست‌ها{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/index.css' %}">
+
+<div class="blog-container">
+    <nav class="blog-menu">
+        <a href="{% url 'blog:post_list' %}">همه پست‌ها</a>
+
+        <form action="{% url 'blog:post_search' %}" method="get" class="search-form">
+            <input type="text" name="query" placeholder="جستجو در میان پست‌ها..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <section class="blog-stats">
+        <h2>📊 آمار</h2>
+        <p>تعداد پست: {% total_posts %}</p>
+        <p>تعداد کامنت‌ها: {% total_comments %}</p>
+        <p>تاریخ آخرین پست: {% latest_post_date %}</p>
+    </section>
+
+    <section class="post-list">
+    <h2 class="section-title">زبان‌های برنامه‌نویسی</h2>
+    <p class="section-description">مقالاتی دربارۀ زبان‌های برنامه‌نویسی مختلف، حرفه، حلقه و کاربردهای آن‌ها</p>
+
+    <div class="card-grid">
+        {% for post in posts %}
+            <div class="post-card">
+                <div class="post-icon">
+                    <img src="{% if post.icon %}{{ post.icon.url }}{% else %}{% static 'blog/images/default-icon.png' %}{% endif %}" alt="{{ post.title }}">
+                </div>
+                <div class="post-content">
+                    <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+                    <p>{{ post.description|truncatechars:80 }}</p>
+                    <span class="post-date">{{ post.publish|date:"j F Y" }}</span>
+                </div>
+            </div>
+        {% empty %}
+            <p>هنوز پستی منتشر نشده است.</p>
+        {% endfor %}
+    </div>
+</section>
+
+    <section class="popular-posts">
+        <h2>🔥 پست‌ها با بیشترین کامنت</h2>
+        <ul>
+            {% most_commented_posts as pop_posts %}
+            {% for post in pop_posts %}
+                <li>
+                    <a href="{{ post.get_absolute_url }}">
+                        {{ post.title }} ({{ post.comment_count }} نظر)
+                    </a>
+                </li>
+            {% empty %}
+                <li>هیچ پستی وجود ندارد.</li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+{% endblock %}

@@ -19,18 +19,18 @@ urlpatterns = [
 
     path('password-change/', views.CustomPasswordChangeView.as_view(), name="password_change"),
     path('password-change/done/',
-         views.PasswordChangeDoneView.as_view(template_name='users/forms/password_change_done.html'),
+         views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'),
          name="password_change_done"),
 
     path('password-reset/', views.CustomPasswordResetView.as_view(), name="password_reset"),
     path('password-reset/done/',
-         views.CustomPasswordResetDoneView.as_view(template_name='users/forms/password_reset_done.html'),
+         views.CustomPasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'),
          name="password_reset_done"),
     path('password-reset/<uidb64>/<token>/',
          views.CustomPasswordResetConfirmView.as_view(),
          name="password_reset_confirm"),
     path('password-reset/complete/',
-         views.CustomPasswordResetCompleteView.as_view(template_name='users/forms/password_reset_complete.html'),
+         views.CustomPasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
          name="password_reset_complete"),
 
 ]
