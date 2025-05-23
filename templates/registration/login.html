@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'users/css/registration/login.css' %}">
  <section class="login">
-  <div class="container">
+  <div class="login-container">
    <div class="banner-content">
 
       <form method="post" class="form-signin">
@@ -17,7 +17,7 @@
            <button class="kafe-btn kafe-btn-mint btn-block" type="hidden" name="next", value="{{ next }}">وارد شوید</button>
            <br/>
            <a class="btn btn-dark " href="{% url 'users:register' %}" role="button">هنوز حساب کاربری ندارید؟ اینجا ثبت نام کنید.</a>
-           <a class="btn btn-dark " href="#" role="button">پسورد خود را فراموش کرده اید؟</a>
+           <a class="btn btn-dark " href="{% url 'users:password_reset' %}" role="button">پسورد خود را فراموش کرده اید؟</a>
       </form>
 
    </div><!--/. banner-content -->

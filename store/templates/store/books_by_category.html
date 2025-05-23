@@ -1,0 +1,53 @@
+{% extends "parent/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'store/css/index.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'store/css/books_by_category.css' %}">
+<div class="store-container">
+    <h1 class="store-heading">دسته‌بندی: {{ category.name }}</h1>
+
+    <div class="product-grid">
+        {% for book in books %}
+            <div class="product-card">
+                <a href="{{ book.get_absolute_url }}">
+                    <div class="product-image"
+                         style="background-image: url('{{ book.images.first.file.url }}');"></div>
+                </a>
+                <div class="product-info">
+                    <h3 class="product-title">{{ book.title }}</h3>
+                    <p class="product-author">نویسنده: {{ book.author }}</p>
+                    <p class="product-price">
+                        {% if book.off > 0 %}
+                            <span class="old-price">{{ book.price }} تومان</span>
+                            <span class="new-price">{{ book.new_price }} تومان</span>
+                        {% else %}
+                            {{ book.price }} تومان
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        {% empty %}
+            <p class="no-books">هیچ کتابی در این دسته‌بندی موجود نیست.</p>
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        {% if books.has_previous %}
+            <a href="?page={{ books.previous_page_number }}" class="page-link">قبلی</a>
+        {% endif %}
+
+        {% for num in books.paginator.page_range %}
+            {% if books.number == num %}
+                <span class="current-page">{{ num }}</span>
+            {% elif num > books.number|add:'-3' and num < books.number|add:'3' %}
+                <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if books.has_next %}
+            <a href="?page={{ books.next_page_number }}" class="page-link">بعدی</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

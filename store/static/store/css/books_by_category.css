@@ -1,0 +1,26 @@
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.page-link, .current-page {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #8AB2A6;
+    color: #F6F1DE;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: #ACD3A8;
+}
+
+.current-page {
+    background-color: #3E3F5B;
+    color: #F6F1DE;
+    cursor: default;
+}

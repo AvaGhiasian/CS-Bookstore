@@ -1,5 +1,3 @@
-/* login.css */
-
 .login {
     background-color: #F6F1DE;
     min-height: 80vh;
@@ -10,10 +8,10 @@
     font-family: 'Vazir', sans-serif;
 }
 
-.container {
+.login-container {
     max-width: 400px;
     width: 100%;
-    background-color: #8AB2A6; /* رنگ ملایم برای بک‌گراند فرم */
+    background-color: #8AB2A6;
     padding: 30px 25px;
     border-radius: 12px;
     box-shadow: 0 6px 14px rgba(62, 63, 91, 0.25);

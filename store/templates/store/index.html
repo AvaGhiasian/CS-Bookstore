@@ -1,0 +1,77 @@
+{% extends "parent/base.html" %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'store/css/index.css' %}">
+    <div class="store-container">
+        <h1 class="store-heading">محصولات</h1>
+
+        <div class="product-grid">
+            {% for book in books %}
+                <div class="product-card">
+                    <a href="{{ book.get_absolute_url }}">
+                        <div class="product-image"
+                             style="background-image: url('{{ book.images.first.file.url }}');"></div>
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-title">{{ book.title }}</h3>
+                        <p class="product-author">نویسنده: {{ book.author }}</p>
+                        <p class="product-price">
+                            {% if book.off > 0 %}
+                                <span class="old-price">{{ book.price }} تومان</span>
+                                <span class="new-price">{{ book.new_price }} تومان</span>
+                            {% else %}
+                                {{ book.price }} تومان
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="see-all-wrapper">
+                <a href="{% url 'store:all_books' %}" class="see-all-btn">مشاهده همه کتاب‌ها</a>
+            </div>
+
+        </div>
+
+        <hr class="divider">
+        <h2 class="category-title">کتاب‌ها بر اساس دسته‌بندی</h2>
+
+        {% for category in categories %}
+            <div class="category-section">
+                <h3 class="category-name">{{ category.name }}</h3>
+                <div class="product-grid">
+                    {% for book in category.books.all|slice:":4" %}
+                        <div class="product-card">
+                            <a href="{{ book.get_absolute_url }}">
+                                <div class="product-image"
+                                     style="background-image: url('{{ book.images.first.file.url }}');"></div>
+                            </a>
+                            <div class="product-info">
+                                <h3 class="product-title">{{ book.title }}</h3>
+                                <p class="product-author">نویسنده: {{ book.author }}</p>
+                                <p class="product-price">
+                                    {% if book.off > 0 %}
+                                        <span class="old-price">{{ book.price }} تومان</span>
+                                        <span class="new-price">{{ book.new_price }} تومان</span>
+                                    {% else %}
+                                        {{ book.price }} تومان
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p class="no-books">کتابی در این دسته‌بندی موجود نیست.</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="see-all-wrapper">
+                <a href="{% url 'store:books_by_category' category.id %}" class="see-all-btn">
+                    مشاهده همه کتاب‌های {{ category.name }}
+                </a>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}
