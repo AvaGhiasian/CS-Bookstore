@@ -11,11 +11,11 @@
         <div class="footer-section links">
             <h4>لینک‌های مفید</h4>
             <ul>
-                <li><a href="#">خانه</a></li>
-                <li><a href="#">کتاب‌ها</a></li>
+                <li><a href="{% url 'store:index' %}">خانه</a></li>
+                <li><a href="{% url 'store:all_books' %}">کتاب‌ها</a></li>
                 <li><a href="{% url 'users:register' %}">ثبت‌نام</a></li>
                 <li><a href="{% url 'users:login' %}">ورود</a></li>
-                <li><a href="#">وبلاگ</a></li>
+                <li><a href="{% url 'blog:index' %}">وبلاگ</a></li>
             </ul>
         </div>
         <div class="footer-section contact">

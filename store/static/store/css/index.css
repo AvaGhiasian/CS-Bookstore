@@ -34,7 +34,7 @@ body {
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-20px);
     background-color: #ACD3A8;
 }
 
@@ -89,7 +89,7 @@ body {
 
 .see-all-btn {
     display: inline-block;
-    background-color: #ACD3A8;
+    background-color: #8AB2A6;
     color: #3E3F5B;
     padding: 0.7rem 1.5rem;
     border-radius: 12px;
@@ -100,7 +100,7 @@ body {
 }
 
 .see-all-btn:hover {
-    background-color: #F6F1DE;
+    background-color: #ACD3A8;
     color: #3E3F5B;
 }
 
@@ -123,9 +123,9 @@ body {
 
 .category-name {
     font-size: 22px;
-    color: #8AB2A6;
+    color: #3E3F5B;
     margin-bottom: 15px;
-    border-bottom: 1px solid #ACD3A8;
+    border-bottom: 2px solid #ACD3A8;
     padding-bottom: 5px;
 }
 

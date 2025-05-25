@@ -1,0 +1,23 @@
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'store/css/pagination.css' %}">
+
+    <div class="pagination">
+        {% if books.has_previous %}
+            <a href="?page={{ books.previous_page_number }}" class="page-link">قبلی</a>
+        {% endif %}
+
+        {% for num in books.paginator.page_range %}
+            {% if books.number == num %}
+                <span class="current-page">{{ num }}</span>
+            {% elif num > books.number|add:'-3' and num < books.number|add:'3' %}
+                <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if books.has_next %}
+            <a href="?page={{ books.next_page_number }}" class="page-link">بعدی</a>
+        {% endif %}
+    </div>
+{% endblock %}

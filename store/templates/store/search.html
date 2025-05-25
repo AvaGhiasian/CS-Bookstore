@@ -1,0 +1,28 @@
+{% extends "parent/base.html" %}
+{% load  static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'store/css/search.css' %}">
+    <div class="store-container">
+        <h2>نتایج جستجو برای "{{ query }}"</h2>
+
+        {% if results %}
+            <div class="product-grid">
+                {% for book in results %}
+                    <div class="product-card">
+                        <a href="{{ book.get_absolute_url }}">
+                            <div class="product-image"
+                                 style="background-image: url('{{ book.images.first.file.url }}');"></div>
+                        </a>
+                        <div class="product-info">
+                            <h3 class="product-title">{{ book.title }}</h3>
+                            <p class="product-author">نویسنده: {{ book.author }}</p>
+                            <p class="product-price">{{ book.price }} تومان</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>هیچ کتابی یافت نشد.</p>
+        {% endif %}
+    </div>
+{% endblock %}

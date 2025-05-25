@@ -4,7 +4,7 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'store/css/index.css' %}">
     <div class="store-container">
-        <h1 class="store-heading">محصولات</h1>
+        <h1 class="store-heading">جدید ترین کتاب ها</h1>
 
         <div class="product-grid">
             {% for book in books %}
@@ -12,19 +12,20 @@
                     <a href="{{ book.get_absolute_url }}">
                         <div class="product-image"
                              style="background-image: url('{{ book.images.first.file.url }}');"></div>
+
+                        <div class="product-info">
+                            <h3 class="product-title">{{ book.title }}</h3>
+                            <p class="product-author">نویسنده: {{ book.author }}</p>
+                            <p class="product-price">
+                                {% if book.off > 0 %}
+                                    <span class="old-price">{{ book.price }} تومان</span>
+                                    <span class="new-price">{{ book.new_price }} تومان</span>
+                                {% else %}
+                                    {{ book.price }} تومان
+                                {% endif %}
+                            </p>
+                        </div>
                     </a>
-                    <div class="product-info">
-                        <h3 class="product-title">{{ book.title }}</h3>
-                        <p class="product-author">نویسنده: {{ book.author }}</p>
-                        <p class="product-price">
-                            {% if book.off > 0 %}
-                                <span class="old-price">{{ book.price }} تومان</span>
-                                <span class="new-price">{{ book.new_price }} تومان</span>
-                            {% else %}
-                                {{ book.price }} تومان
-                            {% endif %}
-                        </p>
-                    </div>
                 </div>
             {% endfor %}
 
@@ -67,7 +68,7 @@
             </div>
 
             <div class="see-all-wrapper">
-                <a href="{% url 'store:books_by_category' category.id %}" class="see-all-btn">
+                <a href="{% url 'store:books_by_category' category.slug%}" class="see-all-btn">
                     مشاهده همه کتاب‌های {{ category.name }}
                 </a>
             </div>

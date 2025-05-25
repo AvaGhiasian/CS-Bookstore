@@ -3,7 +3,6 @@
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'store/css/index.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'store/css/books_by_category.css' %}">
 <div class="store-container">
     <h1 class="store-heading">دسته‌بندی: {{ category.name }}</h1>
 
@@ -31,23 +30,6 @@
             <p class="no-books">هیچ کتابی در این دسته‌بندی موجود نیست.</p>
         {% endfor %}
     </div>
-
-    <div class="pagination">
-        {% if books.has_previous %}
-            <a href="?page={{ books.previous_page_number }}" class="page-link">قبلی</a>
-        {% endif %}
-
-        {% for num in books.paginator.page_range %}
-            {% if books.number == num %}
-                <span class="current-page">{{ num }}</span>
-            {% elif num > books.number|add:'-3' and num < books.number|add:'3' %}
-                <a href="?page={{ num }}" class="page-link">{{ num }}</a>
-            {% endif %}
-        {% endfor %}
-
-        {% if books.has_next %}
-            <a href="?page={{ books.next_page_number }}" class="page-link">بعدی</a>
-        {% endif %}
-    </div>
+{% include 'store/pagination.html' %}
 </div>
 {% endblock %}

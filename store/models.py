@@ -51,8 +51,8 @@ class Book(models.Model):
     new_price = models.PositiveIntegerField(default=0, verbose_name='قیمت پس از تخفیف')
     created = models.DateTimeField(auto_now_add=True, verbose_name='زمان ایجاد')
     updated = models.DateTimeField(auto_now=True, verbose_name='زمان بروزرسانی')
-    publish_date = models.DateTimeField(auto_now=True, verbose_name="تاریخ انتشار")
     page_num = models.PositiveIntegerField(default=0, verbose_name="تعداد صفحات")
+    publish_date = models.DateTimeField(verbose_name="تاریخ انتشار")
 
     class Meta:
         ordering = ['-created']
@@ -93,9 +93,9 @@ class Image(models.Model):
 
 
 class Review(models.Model):
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="books", verbose_name="کتاب")
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="reviews", verbose_name="کتاب")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name="کاربر")
-    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
+    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)], verbose_name="امتیاز")
     body = models.TextField(verbose_name="متن نظر")
     created = models.DateTimeField(auto_now_add=True, verbose_name="تاریخ ایجاد")
     updated = models.DateTimeField(auto_now=True, verbose_name="تاریخ ویرایش")

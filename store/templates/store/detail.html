@@ -2,31 +2,68 @@
 {% load static %}
 
 {% block content %}
-        <link rel="stylesheet" type="text/css" href="{% static 'store/css/detail.css' %}">
-<div class="detail-container">
-    <div class="detail-image">
-        <img src="{{ book.images.first.file.url }}" alt="{{ book.title }}">
-    </div>
-    <div class="detail-info">
-        <h1 class="detail-title">{{ book.title }}</h1>
-        <p class="detail-author"><strong>نویسنده:</strong> {{ book.author }}</p>
-        <p class="detail-category"><strong>دسته‌بندی:</strong> {{ book.category }}</p>
-        <p class="detail-pages"><strong>تعداد صفحات:</strong> {{ book.page_num }}</p>
-        <p class="detail-weight"><strong>وزن:</strong> {{ book.weight }} گرم</p>
-        
-        <p class="detail-price">
-            {% if book.off > 0 %}
-                <span class="old-price">{{ book.price }} تومان</span>
-                <span class="new-price">{{ book.new_price }} تومان</span>
-            {% else %}
-                {{ book.price }} تومان
-            {% endif %}
-        </p>
-
-        <div class="detail-description">
-            <h3>توضیحات:</h3>
-            <p>{{ book.description|linebreaks }}</p>
+    <link rel="stylesheet" type="text/css" href="{% static 'store/css/detail.css' %}">
+    <div class="detail-container">
+        <div class="detail-image">
+            <img src="{{ book.images.first.file.url }}" alt="{{ book.title }}">
         </div>
+        <div class="detail-info">
+            <h1 class="detail-title">{{ book.title }}</h1>
+            <p class="detail-author"><strong>نویسنده:</strong> {{ book.author }}</p>
+            <p class="detail-category"><strong>دسته‌بندی:</strong> {{ book.category }}</p>
+            <p class="detail-pages"><strong>تعداد صفحات:</strong> {{ book.page_num }}</p>
+            <p class="detail-weight"><strong>وزن:</strong> {{ book.weight }} گرم</p>
+
+            <p class="detail-price">
+                {% if book.off > 0 %}
+                    <span class="old-price">{{ book.price }} تومان</span>
+                    <span class="new-price">{{ book.new_price }} تومان</span>
+                {% else %}
+                    {{ book.price }} تومان
+                {% endif %}
+            </p>
+
+            <div class="detail-description">
+                <h3>توضیحات:</h3>
+                <p>{{ book.description|linebreaks }}</p>
+            </div>
+        </div>
+
+        <div class="reviews-section">
+            <h3>نظرات کاربران</h3>
+
+            <!-- نمایش لیست نظرات -->
+            {% if reviews %}
+                <ul class="review-list">
+                    {% for review in reviews %}
+                        <li class="review">
+                            <strong>{{ review.user.username }}</strong>
+                            <span class="review-date">{{ review.created|date:"Y/m/d H:i" }}</span>
+                            <div class="review-rating">امتیاز: {{ review.rating }} / 5</div>
+                            <p class="review-body">{{ review.body }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>هنوز نظری ثبت نشده است.</p>
+            {% endif %}
+
+            <hr>
+
+            {% if user.is_authenticated %}
+                <h4>ثبت نظر</h4>
+                <form method="post" action="{% url 'store:review_book' book.pk book.slug %}" class="review-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="submit-review-btn">ارسال نظر</button>
+                </form>
+            {% else %}
+                <p class="login-warning">
+                    برای ثبت نظر <a href="{% url 'users:login' %}?next={{ request.path }}">وارد حساب خود</a> شوید.
+                </p>
+            {% endif %}
+        </div>
+
+
     </div>
-</div>
 {% endblock %}
