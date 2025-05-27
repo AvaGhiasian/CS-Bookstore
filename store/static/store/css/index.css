@@ -5,6 +5,32 @@ body {
     direction: rtl;
 }
 
+.latest-posts {
+    padding: 6rem;
+    background: #8AB2A6;
+}
+
+.posts-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.post-card {
+    background: #F6F1DE;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    width: 300px;
+}
+
+.post-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+
 .store-container {
     max-width: 1200px;
     margin: auto;

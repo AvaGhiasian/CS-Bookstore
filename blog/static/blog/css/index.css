@@ -93,7 +93,6 @@
     background-color: #ACD3A8;
 }
 
-/* بخش عنوان */
 .section-title {
     font-size: 1.8rem;
     color: #3E3F5B;
@@ -129,11 +128,12 @@
 .post-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background-color: #8AB2A6;
 }
 
 .post-icon img {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
@@ -155,7 +155,7 @@
 }
 
 .post-date {
-    color: #ACD3A8;
+    color: #3E3F5B;
     font-size: 0.85rem;
 }
 

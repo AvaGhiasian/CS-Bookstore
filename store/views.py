@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from store.forms import ReviewForm, SearchForm
 from store.models import Book, Category
+from blog.models import Post
 
 
 # Create your views here.
@@ -13,9 +14,11 @@ from store.models import Book, Category
 def index(request):
     books = Book.objects.filter(available=True).order_by('-created')[:4]
     categories = Category.objects.all()
+    posts = Post.objects.order_by('-created')[:4]
     context = {
         'books': books,
         'categories': categories,
+        'posts': posts,
     }
     return render(request, 'store/index.html', context)
 
