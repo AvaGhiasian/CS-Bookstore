@@ -8,8 +8,10 @@
         <!-- Sidebar (right) -->
         <div class="user-sidebar">
             <div class="user-info">
-                {% if user.photo.url %}
+                {% if user.photo and user.photo.name %}
                     <img src="{{ user.photo.url }}" alt="Profile Picture" class="profile-pic">
+                {% else %}
+                    <img src="#" alt="No Profile Picture" class="profile-pic">
                 {% endif %}
                 <h2 class="username">{{ user.username }}</h2>
                 <p class="email">{{ user.email }}</p>
@@ -17,45 +19,46 @@
             </div>
 
             <div class="user-links">
-                {% if request.user.is_superuser %}
-                    <a href="{% url 'users:add_book' %}" class="user-link">
-                        افزودن کتاب
-                    </a>
-                    <a href="#" class="user-link">
-                        حذف کتاب
-                    </a>
-                    <a href="#" class="user-link">
-                        سفارش‌های من
-                    </a>
-                    <a href="#" class="user-link">
-                        نظرات من
-                    </a>
-                    <a href="{% url 'users:user_edit' %}" class="user-link">
-                        ویرایش حساب
-                    </a>
-                    <a href="{% url 'users:logout' %}" class="user-link logout-link">
-                        خروج
-                    </a>
-                {% else %}
-                    <a href="#" class="user-link">
-                        سفارش‌های من
-                    </a>
-                    <a href="#" class="user-link">
-                        نظرات من
-                    </a>
-                    <a href="{% url 'users:user_edit' %}" class="user-link">
-                        ویرایش حساب
-                    </a>
-                    <a href="{% url 'users:logout' %}" class="user-link logout-link">
-                        خروج
-                    </a>
-                {% endif %}
+                <a href="#" class="user-link">
+                    سفارش‌های من
+                </a>
+                <a href="{% url 'users:ticket' %}" class="user-link">
+                    ارسال نظر به پشتیبانی
+                </a>
+                <a href="{% url 'users:user_edit' %}" class="user-link">
+                    ویرایش حساب
+                </a>
+                <a href="{% url 'users:password_change' %}" class="user-link">
+                    تغییر گذرواژه
+                </a>
+                <a href="{% url 'users:logout' %}" class="user-link logout-link">
+                    خروج
+                </a>
             </div>
         </div>
 
-        <!-- Main content (left, currently empty) -->
+        <!-- Main content (left) -->
         <div class="user-main">
-            <!-- فعلاً خالی -->
+            {% if request.user.is_superuser %}
+                <h3>به عنوان ادمین وارد شده اید، دسترسی های ادمین جهت تغییر وبسایت</h3>
+                <a href="#" class="user-link">
+                    افزودن نویسنده
+                </a>
+                <a href="{% url 'users:add_book' %}" class="user-link">
+                    افزودن کتاب
+                </a>
+                <a href="#" class="user-link">
+                    حذف کتاب
+                </a>
+                <a href="#" class="user-link">
+                    افزودن دسته بندی
+                </a>
+                <a href="#" class="user-link">
+                    افزودن تصویر کتاب
+                </a>
+            {% else %}
+                <h3>به عنوان {{ request.user.last_name }} {{ request.user.first_name }} وارد شده اید، </h3>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

@@ -96,7 +96,7 @@ def review_book(request, pk, slug):
     book = get_object_or_404(Book, id=pk, slug=slug)
 
     if request.method == 'POST':
-        review_form = ReviewForm(request.POST)
+        review_form = ReviewForm(data=request.POST)
         if review_form.is_valid():
             review = review_form.save(commit=False)
             review.book = book
