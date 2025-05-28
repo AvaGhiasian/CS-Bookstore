@@ -1,6 +1,6 @@
 from django import forms
 
-from store.models import Review
+from store.models import Review, Book
 
 
 class ReviewForm(forms.ModelForm):
@@ -15,3 +15,9 @@ class ReviewForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
     query = forms.CharField()
+
+
+class BookForm(forms.ModelForm):
+    class Meta:
+        model = Book
+        fields = '__all__'

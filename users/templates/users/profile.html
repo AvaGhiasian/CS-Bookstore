@@ -2,37 +2,60 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'users/css/users/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/users/profile.css' %}">
 
-<div class="user-profile-container">
-    <!-- Sidebar (right) -->
-    <div class="user-sidebar">
-        <div class="user-info">
-            <img src="{{ user.photo.url }}" alt="Profile Picture" class="profile-pic">
-            <h2 class="username">{{ user.username }}</h2>
-            <p class="email">{{ user.email }}</p>
-            <p class="join-date">عضو شده در: {{ user.date_joined|date:"Y/m/d" }}</p>
+    <div class="user-profile-container">
+        <!-- Sidebar (right) -->
+        <div class="user-sidebar">
+            <div class="user-info">
+                {% if user.photo.url %}
+                    <img src="{{ user.photo.url }}" alt="Profile Picture" class="profile-pic">
+                {% endif %}
+                <h2 class="username">{{ user.username }}</h2>
+                <p class="email">{{ user.email }}</p>
+                <p class="join-date">عضو شده در: {{ user.date_joined|date:"Y/m/d" }}</p>
+            </div>
+
+            <div class="user-links">
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'users:add_book' %}" class="user-link">
+                        افزودن کتاب
+                    </a>
+                    <a href="#" class="user-link">
+                        حذف کتاب
+                    </a>
+                    <a href="#" class="user-link">
+                        سفارش‌های من
+                    </a>
+                    <a href="#" class="user-link">
+                        نظرات من
+                    </a>
+                    <a href="{% url 'users:user_edit' %}" class="user-link">
+                        ویرایش حساب
+                    </a>
+                    <a href="{% url 'users:logout' %}" class="user-link logout-link">
+                        خروج
+                    </a>
+                {% else %}
+                    <a href="#" class="user-link">
+                        سفارش‌های من
+                    </a>
+                    <a href="#" class="user-link">
+                        نظرات من
+                    </a>
+                    <a href="{% url 'users:user_edit' %}" class="user-link">
+                        ویرایش حساب
+                    </a>
+                    <a href="{% url 'users:logout' %}" class="user-link logout-link">
+                        خروج
+                    </a>
+                {% endif %}
+            </div>
         </div>
 
-        <div class="user-links">
-            <a href="#" class="user-link">
-                سفارش‌های من
-            </a>
-            <a href="#" class="user-link">
-                نظرات من
-            </a>
-            <a href="{% url 'users:user_edit' %}" class="user-link">
-                ویرایش حساب
-            </a>
-            <a href="{% url 'users:logout' %}" class="user-link logout-link">
-                خروج
-            </a>
+        <!-- Main content (left, currently empty) -->
+        <div class="user-main">
+            <!-- فعلاً خالی -->
         </div>
     </div>
-
-    <!-- Main content (left, currently empty) -->
-    <div class="user-main">
-        <!-- فعلاً خالی -->
-    </div>
-</div>
 {% endblock %}

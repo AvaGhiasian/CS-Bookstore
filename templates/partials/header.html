@@ -1,11 +1,13 @@
-<!-- header.html -->
 {% load static %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/partials/header.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <header class="site-header">
     <div class="top-header">
-        <div class="logo"> استک بوک | StackBook</div>
+        <div class="logo">
+            <a href="{% url 'store:index' %}"><img src="{% static 'logo/logo.png' %}" alt="استک بوک | StackBook" class="logo-img"></a>
+        </div>
 
         <form action="{% url 'store:search' %}" method="get" class="search-box">
             <input type="text" name="query" placeholder="جستجوی کتاب، نویسنده و..." required>
@@ -20,7 +22,6 @@
                 <a href="{% url 'users:login' %}">ورود</a>
                 <a href="{% url 'users:register' %}">ثبت‌نام</a>
             {% endif %}
-            <a href="#">🛒 سبد خرید</a>
         </div>
     </div>
 

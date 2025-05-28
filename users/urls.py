@@ -8,7 +8,8 @@ app_name = 'users'
 
 urlpatterns = [
     path('profile/', views.profile, name='profile'),
-    path('login/', auth_views.LoginView.as_view(authentication_form=LoginForm, next_page='users:profile'), name='login'),
+    path('login/', auth_views.LoginView.as_view(authentication_form=LoginForm, next_page='users:profile'),
+         name='login'),
     # path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('logout/', views.log_out, name='logout'),
 
@@ -32,5 +33,7 @@ urlpatterns = [
     path('password-reset/complete/',
          views.CustomPasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
          name="password_reset_complete"),
+
+    path('profile/books/add/', views.add_book, name='add_book'),
 
 ]

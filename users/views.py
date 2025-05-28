@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.mail import send_mail
 from django.contrib.auth.views import PasswordChangeView, PasswordResetView, PasswordChangeDoneView, \
     PasswordResetDoneView, PasswordResetCompleteView, PasswordResetConfirmView
@@ -11,6 +11,7 @@ import jdatetime
 from datetime import datetime
 
 from .forms import *
+from store.forms import BookForm
 
 
 # Create your views here.
@@ -100,3 +101,15 @@ class CustomPasswordResetConfirmView(PasswordResetConfirmView):
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'registration/password_reset_complete.html'
+
+@user_passes_test(lambda user:user.is_superuser)
+def add_book(request):
+    if request.method == 'POST':
+        book_form = BookForm(data=request.POST)
+        if book_form.is_valid():
+            book_form.save()
+            return redirect('users:profile')
+    else:
+        book_form = BookForm()
+    return render(request, 'store/add_book.html', {'form': book_form})
+

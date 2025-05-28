@@ -1,0 +1,22 @@
+{% extends "parent/base.html" %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'store/css/add_book.css' %}">
+
+    <div class="form-wrapper">
+        <div class="add-book-form-container">
+            <h2 class="text-2xl font-bold mb-6">افزودن کتاب جدید</h2>
+
+            <div class="add-book-form">
+                <form method="post" enctype="multipart/form-data" class="space-y-4">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">
+                        افزودن کتاب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

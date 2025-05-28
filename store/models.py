@@ -77,7 +77,7 @@ class Book(models.Model):
 
 
 class Image(models.Model):
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="images", verbose_name="محصول")
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="images", verbose_name="کتاب")
     file = models.ImageField(upload_to="product_images/%Y/%m/%d")
     title = models.CharField(max_length=250, verbose_name="عنوان", null=True, blank=True)
     description = models.TextField(verbose_name="توضیحات", null=True, blank=True)

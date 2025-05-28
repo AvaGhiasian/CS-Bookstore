@@ -1,9 +1,9 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.postgres.search import TrigramSimilarity
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 
-from store.forms import ReviewForm, SearchForm
+from store.forms import ReviewForm, SearchForm, BookForm
 from store.models import Book, Category
 from blog.models import Post
 
@@ -105,4 +105,3 @@ def review_book(request, pk, slug):
             return redirect(book.get_absolute_url())
 
     return redirect(book.get_absolute_url())
-
