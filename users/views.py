@@ -11,7 +11,7 @@ import jdatetime
 from datetime import datetime
 
 from .forms import *
-from store.forms import BookForm
+from store.forms import AuthorForm, BookForm, CategoryForm, ImageForm
 
 
 # Create your views here.
@@ -102,7 +102,8 @@ class CustomPasswordResetConfirmView(PasswordResetConfirmView):
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'registration/password_reset_complete.html'
 
-@user_passes_test(lambda user:user.is_superuser)
+
+@user_passes_test(lambda user: user.is_superuser)
 def add_book(request):
     if request.method == 'POST':
         book_form = BookForm(data=request.POST)
@@ -113,3 +114,38 @@ def add_book(request):
         book_form = BookForm()
     return render(request, 'store/add_book.html', {'form': book_form})
 
+
+@user_passes_test(lambda user: user.is_superuser)
+def add_author(request):
+    if request.method == 'POST':
+        author_form = AuthorForm(data=request.POST)
+        if author_form.is_valid():
+            author_form.save()
+            return redirect('users:profile')
+    else:
+        author_form = AuthorForm()
+    return render(request, 'store/add_author.html', {'author_form': author_form})
+
+
+@user_passes_test(lambda user: user.is_superuser)
+def add_category(request):
+    if request.method == 'POST':
+        category_form = CategoryForm(data=request.POST)
+        if category_form.is_valid():
+            category_form.save()
+            return redirect('users:profile')
+    else:
+        category_form = CategoryForm()
+    return render(request, 'store/add_category.html', {'category_form': category_form})
+
+
+@user_passes_test(lambda user: user.is_superuser)
+def add_image(request):
+    if request.method == 'POST':
+        image_form = ImageForm(request.POST, request.FILES)
+        if image_form.is_valid():
+            image_form.save()
+            return redirect('users:profile')
+    else:
+        image_form = ImageForm()
+    return render(request, 'store/add_image.html', {'image_form':image_form})

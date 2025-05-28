@@ -35,5 +35,8 @@ urlpatterns = [
          name="password_reset_complete"),
 
     path('profile/books/add/', views.add_book, name='add_book'),
+    path('profile/author/add/', views.add_author, name='add_author'),
+    path('profile/category/add/', views.add_category, name='add_category'),
+    path('profile/image/add/', views.add_image, name='add_image'),
 
 ]

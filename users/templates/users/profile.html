@@ -41,7 +41,7 @@
         <div class="user-main">
             {% if request.user.is_superuser %}
                 <h3>به عنوان ادمین وارد شده اید، دسترسی های ادمین جهت تغییر وبسایت</h3>
-                <a href="#" class="user-link">
+                <a href="{% url 'users:add_author' %}" class="user-link">
                     افزودن نویسنده
                 </a>
                 <a href="{% url 'users:add_book' %}" class="user-link">
@@ -50,10 +50,10 @@
                 <a href="#" class="user-link">
                     حذف کتاب
                 </a>
-                <a href="#" class="user-link">
+                <a href="{% url 'users:add_category' %}" class="user-link">
                     افزودن دسته بندی
                 </a>
-                <a href="#" class="user-link">
+                <a href="{% url 'users:add_image' %}" class="user-link">
                     افزودن تصویر کتاب
                 </a>
             {% else %}
