@@ -1,10 +1,10 @@
-# 📚 Computer Science Book Store
+# Computer Science Book Store
 
 One of my favorite Django projects that I started by myself! This is a work-in-progress and will continue to evolve as I learn and build more features.
 
 ---
 
-## 🔧 Current Features
+## Current Features
 
 The site currently supports:
 
