@@ -8,31 +8,30 @@ One of my favorite Django projects that I started by myself! This is a work-in-p
 
 The site currently supports:
 
-- 📦 Three main apps: `Blog`, `Users`, and `Store`
-- 🔍 Full-text **search** across books, authors, and categories
-- ✉️ **SMTP integration** for email-based features
-- 👤 **User panel** includes:
+- Three main apps: `Blog`, `Users`, and `Store`
+- Full-text **search** across books, authors, and categories
+- SMTP integration for email-based features
+- User panel includes:
   - Edit user info
   - Password reset
   - Password change
-- 📰 **Blog system** with latest posts about programming languages, etc.
-- 🎨 User-friendly HTML forms styled with CSS
-- 🌐 **Persian (Farsi)** interface with RTL-friendly design
-- 🔐 **Role-based access control** for users and admins
+- Blog system with latest posts about programming languages, etc.
+- User-friendly HTML forms styled with CSS
+- Persian (Farsi) interface with RTL-friendly design
+- Role-based access control for users and admins
 
 ---
 
-## 🌱 Planned Features (Coming Soon)
+## Planned Features (Coming Soon)
 
-- 🛒 **Shopping cart** functionality
-- 💳 **Checkout system** with order tracking and payments
-- 🌐 **REST API** using Django REST Framework (DRF)
-- 📱 **Responsive design** for mobile and tablets
-- 🧠 More features as I continue to learn and improve!
+- Shopping cart functionality
+- Checkout system with order tracking and payments
+- REST API using Django REST Framework (DRF)
+- More features as I continue to learn and improve!
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend**: Django (Python)
 - **Database**: PostgreSQL
