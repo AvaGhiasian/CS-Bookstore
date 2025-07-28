@@ -1,0 +1,36 @@
+/* logout.css */
+
+.logout-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    background-color: #F6F1DE;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Vazir', sans-serif;
+}
+
+.logout-message h2 {
+    color: #3E3F5B;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.logout-message .btn-primary {
+    background-color: #ACD3A8;
+    color: #3E3F5B;
+    text-decoration: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-message .btn-primary:hover {
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+    border: 2px solid #3E3F5B;
+}

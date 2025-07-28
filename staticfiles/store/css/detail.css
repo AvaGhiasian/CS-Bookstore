@@ -1,0 +1,124 @@
+.detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #F6F1DE;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    color: #3E3F5B;
+}
+
+.detail-image img {
+    width: 320px;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.detail-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3E3F5B;
+}
+
+.detail-price {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    color: #3E3F5B;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+}
+
+.new-price {
+    color: #ACD3A8;
+    font-weight: bold;
+}
+
+.detail-description {
+    margin-top: 1rem;
+    background-color: #ACD3A8;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    line-height: 1.8;
+}
+
+.detail-description h3 {
+    color: #3E3F5B;
+    margin-bottom: 0.5rem;
+}
+
+.reviews-section {
+    background-color: #8AB2A6;
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: 'Vazir', sans-serif;
+}
+
+.review-list {
+    list-style: none;
+    padding: 0;
+}
+
+.review {
+    background-color: #f1f1f1;
+    border: 1px solid #ACD3A8;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.review-rating {
+    color: #3E3F5B;
+    font-weight: bold;
+}
+
+.review-form textarea,
+.review-form select,
+.review-form input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #ACD3A8;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+}
+
+.submit-review-btn {
+    background-color: #ACD3A8;
+    color: #3E3F5B;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-review-btn:hover {
+    background-color: #F6F1DE;
+}
+
+.login-warning a {
+    color: #3E3F5B;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.login-warning a:hover {
+    color: #f1f1f1;
+}

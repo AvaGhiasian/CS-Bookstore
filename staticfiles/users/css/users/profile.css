@@ -1,0 +1,84 @@
+.user-profile-container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #F6F1DE;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* #8AB2A6 */
+/* Sidebar */
+.user-sidebar {
+    width: 300px;
+    background-color: #3E3F5B;
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3E3F5B;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid #8AB2A6;
+}
+
+.username {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #F6F1DE;
+}
+
+.email, .join-date {
+    font-size: 1rem;
+    color: #F6F1DE;
+    margin-bottom: 0.3rem;
+}
+
+.user-links {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.user-link {
+    display: block;
+    padding: 10px 15px;
+    margin: 10px 0;
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.user-link:hover {
+    background-color: #8AB2A6;
+}
+
+.logout-link {
+    background-color: #d9534f;
+    color: white;
+}
+
+.logout-link:hover {
+    background-color: #8AB2A6;
+}
+
+.user-main {
+    flex: 1;
+    background-color: #ddd;
+    border-radius: 16px;
+    padding: 2rem;
+    min-height: 400px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}

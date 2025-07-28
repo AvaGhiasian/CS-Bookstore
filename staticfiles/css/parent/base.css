@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url('../../../users/static/users/fonts/vazir/Vazir.eot'); /* IE9 Compat Modes */
+    src: url('../../../users/static/users/fonts/vazir/Vazir.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../../../users/static/users/fonts/vazir/Vazir.woff2') format('woff2'), /* Modern Browsers */
+         url('../../../users/static/users/fonts/vazir/Vazir.woff') format('woff'), /* Modern Browsers */
+         url('../../../users/static/users/fonts/vazir/Vazir.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    font-family: 'Vazir', sans-serif;
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+    line-height: 1.6;
+    font-size: 16px;
+    margin:0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+
+a {
+    color: #8AB2A6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: #ACD3A8;
+    outline: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button, input[type="submit"] {
+    background-color: #ACD3A8;
+    border: none;
+    color: #3E3F5B;
+    padding: 10px 18px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Vazir', Tahoma, Arial, sans-serif;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #3E3F5B;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(62, 63, 91, 0.1);
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+
+.pb-1 { padding-bottom: 0.25rem; }
+.pb-2 { padding-bottom: 0.5rem; }
+.pb-3 { padding-bottom: 1rem; }
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}

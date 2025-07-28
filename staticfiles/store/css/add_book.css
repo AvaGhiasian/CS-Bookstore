@@ -1,0 +1,87 @@
+.add-book-form-container {
+    background-color: #F6F1DE;
+    padding: 30px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    direction: rtl;
+    font-family: "Vazir", sans-serif;
+    color: #3E3F5B;
+}
+
+.add-book-form-container h2 {
+    color: #3E3F5B;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+}
+
+.add-book-form form p {
+    margin-bottom: 15px;
+}
+
+.add-book-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.add-book-form input[type="text"],
+.add-book-form input[type="number"],
+.add-book-form input[type="file"],
+.add-book-form textarea,
+.add-book-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    align-content: center;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+.add-book-form input:focus,
+.add-book-form textarea:focus,
+.add-book-form select:focus {
+    border-color: #8AB2A6;
+    outline: none;
+}
+
+.add-book-form button[type="submit"] {
+    background-color: #ACD3A8;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-book-form button[type="submit"]:hover {
+    background-color: #3E3F5B;
+    color: #F6F1DE;
+}
+
+
+.form-wrapper {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.add-book-form-container {
+    background-color: #8AB2A6;
+    padding: 30px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    direction: rtl;
+    font-family: "Vazir", sans-serif;
+    color: #3E3F5B;
+    max-width: 600px;
+    width: 100%;
+}

@@ -1,0 +1,147 @@
+body {
+    font-family: 'Vazir', sans-serif;
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+    direction: rtl;
+    padding: 40px 20px;
+}
+
+form {
+    background-color: #8AB2A6;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(62, 63, 91, 0.2);
+    max-width: 600px;
+    margin: auto;
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #3E3F5B;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3E3F5B;
+    border-radius: 8px;
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+}
+
+form textarea {
+    min-height: 100px;
+}
+
+form input[type="submit"] {
+    background-color: #ACD3A8;
+    color: #3E3F5B;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+}
+
+.centered {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background-color: #8AB2A6;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(62, 63, 91, 0.15);
+    direction: rtl;
+    color: #3E3F5B;
+}
+
+.centered h2 {
+    color: #3E3F5B;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.centered a.btn {
+    background-color: #ACD3A8;
+    color: #3E3F5B;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.centered a.btn:hover {
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+}
+
+
+form {
+    background-color: #8AB2A6;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(62, 63, 91, 0.2);
+    max-width: 600px;
+    margin: auto;
+}
+
+form p {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #3E3F5B;
+}
+
+form p label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #3E3F5B;
+}
+
+form p input[type="text"],
+form p input[type="email"],
+form p input[type="password"],
+form p textarea {
+    padding: 10px;
+    border: 1px solid #3E3F5B;
+    border-radius: 8px;
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+    font-size: 1rem;
+}
+
+form p textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form input[type="submit"] {
+    background-color: #ACD3A8;
+    color: #3E3F5B;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #F6F1DE;
+    color: #3E3F5B;
+}
