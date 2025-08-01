@@ -64,7 +64,7 @@ def ticket(request):
             data = form.cleaned_data
             subject = data['subject']
             message = f"{data['name']}\n{data['email']}\n{data['phone']}\n\n{data['message']}"
-            from_email = 'avaghiasian82@gmail.com'
+            from_email = 'avaghiasian2882@gmail.com'
             to_email = ['avaghiasian03@gmail.com']
             send_mail(subject, message, from_email, to_email, fail_silently=False)
             messages.success(request, 'پیام شما با موفقیت ارسال شد.')

@@ -26,9 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-zweis1h+@8o_1c@7i+wbc&m16mx(t-d0z*m1peh(ie(!^@58eq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("IS_DEVELOPMENT", True)
 
-ALLOWED_HOSTS = ['.elasticbeanstalk.com']
+ALLOWED_HOSTS = [
+    # os.getenv("APP_HOST"),
+]
 
 # Application definition
 
@@ -131,7 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
@@ -154,7 +156,7 @@ LOGOUT_URL = '/logout/'
 
 # smtp
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'avaghiasian82@gmail.com'
+EMAIL_HOST_USER = 'avaghiasian2882@gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
