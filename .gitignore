@@ -179,3 +179,4 @@ cython_debug/
 .vscode/
 .venv/
 .env/
+.cz.toml
